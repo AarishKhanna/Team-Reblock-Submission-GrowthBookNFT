@@ -159,7 +159,7 @@ After buying our GrowthBook PRO-NFT, You get access to following exciting featur
 2. Unlimited non-intervention consultation from child professional
 3.Become a part of global parent community
 
-More Features:
+Additional Features:
 4. Participate in webinar & events which help you as a parent
 5. Become Part of Creator's team and many more
 
