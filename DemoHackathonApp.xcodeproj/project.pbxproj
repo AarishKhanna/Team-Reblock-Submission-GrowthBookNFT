@@ -7,10 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		402E6D5B29ACC52B005E1567 /* FCL in Frameworks */ = {isa = PBXBuildFile; productRef = 402E6D5A29ACC52B005E1567 /* FCL */; };
+		402E6D5D29ACC629005E1567 /* PurchaseNFTViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 402E6D5C29ACC629005E1567 /* PurchaseNFTViewController.swift */; };
+		40A03D7029ADBFD0000076E8 /* NFTModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40A03D6F29ADBFD0000076E8 /* NFTModel.swift */; };
+		40A03D7329ADC2B5000076E8 /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 40A03D7229ADC2B5000076E8 /* SDWebImageSwiftUI */; };
+		40A03D7529ADD301000076E8 /* FlowManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40A03D7429ADD301000076E8 /* FlowManager.swift */; };
+		40A03D7729ADE16E000076E8 /* NFTTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40A03D7629ADE16E000076E8 /* NFTTableViewCell.swift */; };
+		40A03D7929ADF2A7000076E8 /* DetailNFTPlanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40A03D7829ADF2A7000076E8 /* DetailNFTPlanViewController.swift */; };
+		40BE34AD29ACDEEE0076C678 /* HelperFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40BE34AC29ACDEEE0076C678 /* HelperFile.swift */; };
 		40D8D29629ACB7E1005E003A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40D8D29529ACB7E1005E003A /* AppDelegate.swift */; };
 		40D8D29829ACB7E1005E003A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40D8D29729ACB7E1005E003A /* SceneDelegate.swift */; };
-		40D8D29A29ACB7E1005E003A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40D8D29929ACB7E1005E003A /* ViewController.swift */; };
-		40D8D29D29ACB7E1005E003A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 40D8D29B29ACB7E1005E003A /* Main.storyboard */; };
+		40D8D29A29ACB7E1005E003A /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40D8D29929ACB7E1005E003A /* HomeViewController.swift */; };
 		40D8D29F29ACB7E5005E003A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 40D8D29E29ACB7E5005E003A /* Assets.xcassets */; };
 		40D8D2A229ACB7E5005E003A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 40D8D2A029ACB7E5005E003A /* LaunchScreen.storyboard */; };
 		40D8D2AD29ACB7E6005E003A /* DemoHackathonAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40D8D2AC29ACB7E6005E003A /* DemoHackathonAppTests.swift */; };
@@ -36,11 +43,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		402E6D5C29ACC629005E1567 /* PurchaseNFTViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseNFTViewController.swift; sourceTree = "<group>"; };
+		40A03D6F29ADBFD0000076E8 /* NFTModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NFTModel.swift; sourceTree = "<group>"; };
+		40A03D7429ADD301000076E8 /* FlowManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowManager.swift; sourceTree = "<group>"; };
+		40A03D7629ADE16E000076E8 /* NFTTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NFTTableViewCell.swift; sourceTree = "<group>"; };
+		40A03D7829ADF2A7000076E8 /* DetailNFTPlanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailNFTPlanViewController.swift; sourceTree = "<group>"; };
+		40BE34AC29ACDEEE0076C678 /* HelperFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelperFile.swift; sourceTree = "<group>"; };
 		40D8D29229ACB7E1005E003A /* DemoHackathonApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DemoHackathonApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		40D8D29529ACB7E1005E003A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		40D8D29729ACB7E1005E003A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		40D8D29929ACB7E1005E003A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		40D8D29C29ACB7E1005E003A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		40D8D29929ACB7E1005E003A /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		40D8D29E29ACB7E5005E003A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		40D8D2A129ACB7E5005E003A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		40D8D2A329ACB7E5005E003A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -56,6 +68,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				40A03D7329ADC2B5000076E8 /* SDWebImageSwiftUI in Frameworks */,
+				402E6D5B29ACC52B005E1567 /* FCL in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -76,6 +90,43 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4019185729AE7F7C0068DEA3 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				40A03D6F29ADBFD0000076E8 /* NFTModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		4019185829AE7F890068DEA3 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				40D8D29929ACB7E1005E003A /* HomeViewController.swift */,
+				402E6D5C29ACC629005E1567 /* PurchaseNFTViewController.swift */,
+				40A03D7829ADF2A7000076E8 /* DetailNFTPlanViewController.swift */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		4019185929AE7FE60068DEA3 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				40A03D7629ADE16E000076E8 /* NFTTableViewCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		4019185A29AE7FF30068DEA3 /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				40A03D7429ADD301000076E8 /* FlowManager.swift */,
+				40BE34AC29ACDEEE0076C678 /* HelperFile.swift */,
+				40D8D29729ACB7E1005E003A /* SceneDelegate.swift */,
+				40D8D29529ACB7E1005E003A /* AppDelegate.swift */,
+			);
+			path = Utility;
+			sourceTree = "<group>";
+		};
 		40D8D28929ACB7E1005E003A = {
 			isa = PBXGroup;
 			children = (
@@ -99,10 +150,10 @@
 		40D8D29429ACB7E1005E003A /* DemoHackathonApp */ = {
 			isa = PBXGroup;
 			children = (
-				40D8D29529ACB7E1005E003A /* AppDelegate.swift */,
-				40D8D29729ACB7E1005E003A /* SceneDelegate.swift */,
-				40D8D29929ACB7E1005E003A /* ViewController.swift */,
-				40D8D29B29ACB7E1005E003A /* Main.storyboard */,
+				4019185A29AE7FF30068DEA3 /* Utility */,
+				4019185929AE7FE60068DEA3 /* Views */,
+				4019185829AE7F890068DEA3 /* View Controllers */,
+				4019185729AE7F7C0068DEA3 /* Models */,
 				40D8D29E29ACB7E5005E003A /* Assets.xcassets */,
 				40D8D2A029ACB7E5005E003A /* LaunchScreen.storyboard */,
 				40D8D2A329ACB7E5005E003A /* Info.plist */,
@@ -143,6 +194,10 @@
 			dependencies = (
 			);
 			name = DemoHackathonApp;
+			packageProductDependencies = (
+				402E6D5A29ACC52B005E1567 /* FCL */,
+				40A03D7229ADC2B5000076E8 /* SDWebImageSwiftUI */,
+			);
 			productName = DemoHackathonApp;
 			productReference = 40D8D29229ACB7E1005E003A /* DemoHackathonApp.app */;
 			productType = "com.apple.product-type.application";
@@ -215,6 +270,10 @@
 				Base,
 			);
 			mainGroup = 40D8D28929ACB7E1005E003A;
+			packageReferences = (
+				402E6D5929ACC52B005E1567 /* XCRemoteSwiftPackageReference "fcl-swift" */,
+				40A03D7129ADC2B5000076E8 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */,
+			);
 			productRefGroup = 40D8D29329ACB7E1005E003A /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -233,7 +292,6 @@
 			files = (
 				40D8D2A229ACB7E5005E003A /* LaunchScreen.storyboard in Resources */,
 				40D8D29F29ACB7E5005E003A /* Assets.xcassets in Resources */,
-				40D8D29D29ACB7E1005E003A /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -258,9 +316,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				40D8D29A29ACB7E1005E003A /* ViewController.swift in Sources */,
+				402E6D5D29ACC629005E1567 /* PurchaseNFTViewController.swift in Sources */,
+				40D8D29A29ACB7E1005E003A /* HomeViewController.swift in Sources */,
+				40A03D7729ADE16E000076E8 /* NFTTableViewCell.swift in Sources */,
 				40D8D29629ACB7E1005E003A /* AppDelegate.swift in Sources */,
 				40D8D29829ACB7E1005E003A /* SceneDelegate.swift in Sources */,
+				40A03D7029ADBFD0000076E8 /* NFTModel.swift in Sources */,
+				40A03D7929ADF2A7000076E8 /* DetailNFTPlanViewController.swift in Sources */,
+				40BE34AD29ACDEEE0076C678 /* HelperFile.swift in Sources */,
+				40A03D7529ADD301000076E8 /* FlowManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -297,14 +361,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		40D8D29B29ACB7E1005E003A /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				40D8D29C29ACB7E1005E003A /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		40D8D2A029ACB7E5005E003A /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -442,7 +498,6 @@
 				INFOPLIST_FILE = DemoHackathonApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -470,7 +525,6 @@
 				INFOPLIST_FILE = DemoHackathonApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -602,6 +656,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		402E6D5929ACC52B005E1567 /* XCRemoteSwiftPackageReference "fcl-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/outblock/fcl-swift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.1.0;
+			};
+		};
+		40A03D7129ADC2B5000076E8 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImageSwiftUI";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		402E6D5A29ACC52B005E1567 /* FCL */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 402E6D5929ACC52B005E1567 /* XCRemoteSwiftPackageReference "fcl-swift" */;
+			productName = FCL;
+		};
+		40A03D7229ADC2B5000076E8 /* SDWebImageSwiftUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 40A03D7129ADC2B5000076E8 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */;
+			productName = SDWebImageSwiftUI;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 40D8D28A29ACB7E1005E003A /* Project object */;
 }
