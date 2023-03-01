@@ -9,6 +9,11 @@
 /* Begin PBXBuildFile section */
 		402E6D5B29ACC52B005E1567 /* FCL in Frameworks */ = {isa = PBXBuildFile; productRef = 402E6D5A29ACC52B005E1567 /* FCL */; };
 		402E6D5D29ACC629005E1567 /* PurchaseNFTViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 402E6D5C29ACC629005E1567 /* PurchaseNFTViewController.swift */; };
+		407C448129AF1A0F00D51ACF /* FungibleToken.cdc in Resources */ = {isa = PBXBuildFile; fileRef = 407C447C29AF1A0F00D51ACF /* FungibleToken.cdc */; };
+		407C448229AF1A0F00D51ACF /* NonFungibleToken.cdc in Resources */ = {isa = PBXBuildFile; fileRef = 407C447D29AF1A0F00D51ACF /* NonFungibleToken.cdc */; };
+		407C448329AF1A0F00D51ACF /* FlowToken.cdc in Resources */ = {isa = PBXBuildFile; fileRef = 407C447E29AF1A0F00D51ACF /* FlowToken.cdc */; };
+		407C448429AF1A0F00D51ACF /* NFTMarketplace.cdc in Resources */ = {isa = PBXBuildFile; fileRef = 407C447F29AF1A0F00D51ACF /* NFTMarketplace.cdc */; };
+		407C448529AF1A0F00D51ACF /* MyNFT.cdc in Resources */ = {isa = PBXBuildFile; fileRef = 407C448029AF1A0F00D51ACF /* MyNFT.cdc */; };
 		40A03D7029ADBFD0000076E8 /* NFTModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40A03D6F29ADBFD0000076E8 /* NFTModel.swift */; };
 		40A03D7329ADC2B5000076E8 /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 40A03D7229ADC2B5000076E8 /* SDWebImageSwiftUI */; };
 		40A03D7529ADD301000076E8 /* FlowManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40A03D7429ADD301000076E8 /* FlowManager.swift */; };
@@ -44,6 +49,16 @@
 
 /* Begin PBXFileReference section */
 		402E6D5C29ACC629005E1567 /* PurchaseNFTViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseNFTViewController.swift; sourceTree = "<group>"; };
+		407C447C29AF1A0F00D51ACF /* FungibleToken.cdc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = FungibleToken.cdc; sourceTree = "<group>"; };
+		407C447D29AF1A0F00D51ACF /* NonFungibleToken.cdc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = NonFungibleToken.cdc; sourceTree = "<group>"; };
+		407C447E29AF1A0F00D51ACF /* FlowToken.cdc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = FlowToken.cdc; sourceTree = "<group>"; };
+		407C447F29AF1A0F00D51ACF /* NFTMarketplace.cdc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = NFTMarketplace.cdc; sourceTree = "<group>"; };
+		407C448029AF1A0F00D51ACF /* MyNFT.cdc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = MyNFT.cdc; sourceTree = "<group>"; };
+		407C448729AF1A2B00D51ACF /* MyNFT.cdc */ = {isa = PBXFileReference; lastKnownFileType = text; path = MyNFT.cdc; sourceTree = "<group>"; };
+		407C448829AF1A2B00D51ACF /* FungibleToken.cdc */ = {isa = PBXFileReference; lastKnownFileType = text; path = FungibleToken.cdc; sourceTree = "<group>"; };
+		407C448929AF1A2B00D51ACF /* NonFungibleToken.cdc */ = {isa = PBXFileReference; lastKnownFileType = text; path = NonFungibleToken.cdc; sourceTree = "<group>"; };
+		407C448A29AF1A2C00D51ACF /* FlowToken.cdc */ = {isa = PBXFileReference; lastKnownFileType = text; path = FlowToken.cdc; sourceTree = "<group>"; };
+		407C448B29AF1A2C00D51ACF /* NFTMarketplace.cdc */ = {isa = PBXFileReference; lastKnownFileType = text; path = NFTMarketplace.cdc; sourceTree = "<group>"; };
 		40A03D6F29ADBFD0000076E8 /* NFTModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NFTModel.swift; sourceTree = "<group>"; };
 		40A03D7429ADD301000076E8 /* FlowManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowManager.swift; sourceTree = "<group>"; };
 		40A03D7629ADE16E000076E8 /* NFTTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NFTTableViewCell.swift; sourceTree = "<group>"; };
@@ -127,9 +142,35 @@
 			path = Utility;
 			sourceTree = "<group>";
 		};
+		407C447B29AF1A0F00D51ACF /* Cadence */ = {
+			isa = PBXGroup;
+			children = (
+				407C447C29AF1A0F00D51ACF /* FungibleToken.cdc */,
+				407C447D29AF1A0F00D51ACF /* NonFungibleToken.cdc */,
+				407C447E29AF1A0F00D51ACF /* FlowToken.cdc */,
+				407C447F29AF1A0F00D51ACF /* NFTMarketplace.cdc */,
+				407C448029AF1A0F00D51ACF /* MyNFT.cdc */,
+			);
+			name = Cadence;
+			path = ../../DemoHackathonApp/DemoHackathonApp/Cadence;
+			sourceTree = "<group>";
+		};
+		407C448629AF1A2B00D51ACF /* Cadence */ = {
+			isa = PBXGroup;
+			children = (
+				407C448829AF1A2B00D51ACF /* FungibleToken.cdc */,
+				407C448929AF1A2B00D51ACF /* NonFungibleToken.cdc */,
+				407C448A29AF1A2C00D51ACF /* FlowToken.cdc */,
+				407C448B29AF1A2C00D51ACF /* NFTMarketplace.cdc */,
+				407C448729AF1A2B00D51ACF /* MyNFT.cdc */,
+			);
+			path = Cadence;
+			sourceTree = "<group>";
+		};
 		40D8D28929ACB7E1005E003A = {
 			isa = PBXGroup;
 			children = (
+				407C448629AF1A2B00D51ACF /* Cadence */,
 				40D8D29429ACB7E1005E003A /* DemoHackathonApp */,
 				40D8D2AB29ACB7E6005E003A /* DemoHackathonAppTests */,
 				40D8D2B529ACB7E6005E003A /* DemoHackathonAppUITests */,
@@ -150,6 +191,7 @@
 		40D8D29429ACB7E1005E003A /* DemoHackathonApp */ = {
 			isa = PBXGroup;
 			children = (
+				407C447B29AF1A0F00D51ACF /* Cadence */,
 				4019185A29AE7FF30068DEA3 /* Utility */,
 				4019185929AE7FE60068DEA3 /* Views */,
 				4019185829AE7F890068DEA3 /* View Controllers */,
@@ -290,8 +332,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				407C448229AF1A0F00D51ACF /* NonFungibleToken.cdc in Resources */,
+				407C448329AF1A0F00D51ACF /* FlowToken.cdc in Resources */,
+				407C448129AF1A0F00D51ACF /* FungibleToken.cdc in Resources */,
 				40D8D2A229ACB7E5005E003A /* LaunchScreen.storyboard in Resources */,
+				407C448529AF1A0F00D51ACF /* MyNFT.cdc in Resources */,
 				40D8D29F29ACB7E5005E003A /* Assets.xcassets in Resources */,
+				407C448429AF1A0F00D51ACF /* NFTMarketplace.cdc in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
