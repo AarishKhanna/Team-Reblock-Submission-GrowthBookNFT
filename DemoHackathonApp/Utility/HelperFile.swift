@@ -40,10 +40,10 @@ class HelperFile {
         import NonFungibleToken from 0x631e88ae7f1d7c20
         import NFTMarketplace from 0xce6e0ea6c6cde0a4
         pub fun main(account: Address): {UInt64: NFTMarketplace.SaleItem} {
-          let saleCollection = getAccount(account).getCapability(/public/MySaleCollec)
+          let saleCollection = getAccount(account).getCapability(/public/GrowthBooksSales)
                                 .borrow<&NFTMarketplace.SaleCollection{NFTMarketplace.SaleCollectionPublic}>()
                                 ?? panic("Could not borrow the user's SaleCollection")
-          let collection = getAccount(account).getCapability(/public/MyNFTCn)
+          let collection = getAccount(account).getCapability(/public/GrowthBooks)
                             .borrow<&MyNFT.Collection{NonFungibleToken.CollectionPublic, MyNFT.CollectionPublic}>()
                             ?? panic("Can't get the User's collection.")
           let saleIDs = saleCollection.getIDs()
