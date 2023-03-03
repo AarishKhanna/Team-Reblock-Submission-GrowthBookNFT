@@ -83,7 +83,7 @@ class PurchaseNFTViewController: UIViewController {
         Task{
             
             do{
-                let salesNFTList = try await fcl.query(script: HelperFile.nftList,
+                let salesNFTList = try await fcl.query(script: HelperFile.getSalesNFT,
                                                   args: [.address(address)])
                     .decode([NFTModel].self)
                 

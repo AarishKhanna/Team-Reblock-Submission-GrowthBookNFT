@@ -34,29 +34,43 @@ class HelperFile {
                     }
             """
     
-    static let getSalesNFT =
-    """
-        import MyNFT from 0xce6e0ea6c6cde0a4
-        import NonFungibleToken from 0x631e88ae7f1d7c20
-        import NFTMarketplace from 0xce6e0ea6c6cde0a4
-        pub fun main(account: Address): {UInt64: NFTMarketplace.SaleItem} {
-          let saleCollection = getAccount(account).getCapability(/public/GrowthBooksSales)
-                                .borrow<&NFTMarketplace.SaleCollection{NFTMarketplace.SaleCollectionPublic}>()
-                                ?? panic("Could not borrow the user's SaleCollection")
-          let collection = getAccount(account).getCapability(/public/GrowthBooks)
-                            .borrow<&MyNFT.Collection{NonFungibleToken.CollectionPublic, MyNFT.CollectionPublic}>()
-                            ?? panic("Can't get the User's collection.")
-          let saleIDs = saleCollection.getIDs()
-          let returnVals: {UInt64: NFTMarketplace.SaleItem} = {}
-          for saleID in saleIDs {
-            let price = saleCollection.getPrice(id: saleID)
-            let nftRef = collection.borrowEntireNFT(id: saleID)
-            returnVals.insert(key: nftRef.id, NFTMarketplace.SaleItem(_price: price, _nftRef: nftRef))
-          }
-          return returnVals
-        }
+    static let checkInit =
         """
+            import MyNFT from 0xce6e0ea6c6cde0a4
+            import NonFungibleToken from 0x631e88ae7f1d7c20
+            import NFTMarketplace from 0xce6e0ea6c6cde0a4
+            pub fun main(address: Address) : Bool {
+                let account = getAccount(address)
+                let vaultRef = account
+                .getCapability<&{NonFungibleToken.CollectionPublic}>(/public/GrowthBooks)
+                .check()
 
+                return vaultRef
+            }
+        """
+    
+    
+    
+    static let getSalesNFT =
+        """
+            import MyNFT from 0xce6e0ea6c6cde0a4
+                    import NonFungibleToken from 0x631e88ae7f1d7c20
+                    import NFTMarketplace from 0xce6e0ea6c6cde0a4
+                    pub fun main(account: Address):[&MyNFT.NFT] {
+                      let saleCollection = getAccount(account).getCapability(/public/GrowthBooksSales)
+                                            .borrow<&NFTMarketplace.SaleCollection{NFTMarketplace.SaleCollectionPublic}>()
+                                            ?? panic("Could not borrow the user's SaleCollection")
+                      let collection = getAccount(account).getCapability(/public/GrowthBooks)
+                                        .borrow<&MyNFT.Collection{NonFungibleToken.CollectionPublic, MyNFT.CollectionPublic}>()
+                                        ?? panic("Can't get the User's collection.")
+                      let saleIDs = saleCollection.getIDs()
+                      let returnVals: [&MyNFT.NFT] = []
+                      for saleID in saleIDs {
+                        returnVals.append(collection.borrowEntireNFT(id: saleID))
+                      }
+                      return returnVals
+                    }
+            """
     
     static let nftList =
         """

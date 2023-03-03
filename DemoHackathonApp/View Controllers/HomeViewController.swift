@@ -16,6 +16,7 @@ struct Constants {
 class ViewController: UIViewController {
     
     static var nfts: [NFTModel] = []
+    static var result = false
     
     private let verifyNFTButton: UIButton = {
         let button = UIButton()
@@ -49,6 +50,23 @@ class ViewController: UIViewController {
         return button
     }()
     
+    private let logOutButton: UIButton = {
+        let button = UIButton()
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.backgroundColor = .white
+        button.setTitle("Log Out", for: .normal)
+        button.titleLabel?.font = .systemFont(ofSize: 12)
+        button.setTitleColor(.black, for: .normal)
+        button.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.25).cgColor
+        button.layer.shadowOffset = CGSize(width: 0.0, height: 2.0)
+        button.layer.shadowOpacity = 0.0
+        button.layer.cornerRadius = 10
+        button.layer.masksToBounds = true
+        button.addTarget(self, action: #selector(logOutClicked), for: .touchUpInside)
+        button.alpha = 0.0
+        return button
+    }()
+    
     func setupConfig(){
         let defaultProvider: FCL.Provider = .dapperSC
         let defaultNetwork: Flow.ChainID = .testnet
@@ -74,10 +92,34 @@ class ViewController: UIViewController {
             print("here")
         }
     }
+    
+    
+    @objc func logOutClicked(){
+        let seconds = 0.5
+        DispatchQueue.main.asyncAfter(deadline: .now() + seconds) { [self] in
+            Task {
+                try? await fcl.unauthenticate()
+                connectAccountButton.alpha = 1.0
+                verifyNFTButton.alpha = 0.0
+                purchaseNFTButton.alpha = 0.0
+                logOutButton.alpha = 0.0
+                
+            }
+        }
+        
+    }
 
     
     override func viewDidAppear(_ animated: Bool) {
         checkUser()
+        Task {
+                            do {
+                                ViewController.result = try await checkCollectionVault()
+                            } catch {
+                                print(error)
+                            }
+                        }
+        
     }
   
     private func checkUser(){
@@ -88,6 +130,7 @@ class ViewController: UIViewController {
                 connectAccountButton.alpha = 0.0
                 verifyNFTButton.alpha = 1.0
                 purchaseNFTButton.alpha = 1.0
+                logOutButton.alpha = 1.0
                // initAccountButton.alpha = 1.0
            }
         }
@@ -184,10 +227,17 @@ class ViewController: UIViewController {
             purchaseNFTButton.widthAnchor.constraint(equalToConstant: Constants.screenSize.width/3)
         ]
         
+        let logOutButtonConstraints = [
+            logOutButton.topAnchor.constraint(equalTo: view.topAnchor, constant: 60),
+            logOutButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
+            logOutButton.widthAnchor.constraint(equalToConstant: 60)
+        ]
+        
         NSLayoutConstraint.activate(verifyNFTButtonConstraints)
         NSLayoutConstraint.activate(purchaseNFTButtonConstraints)
         NSLayoutConstraint.activate(initAccountButtonConstraints)
         NSLayoutConstraint.activate(connectButtonConstraints)
+        NSLayoutConstraint.activate(logOutButtonConstraints)
     }
     
     var imageView: UIImageView = {
@@ -206,6 +256,7 @@ class ViewController: UIViewController {
         view.addSubview(purchaseNFTButton)
         view.addSubview(initAccountButton)
         view.addSubview(connectAccountButton)
+        view.addSubview(logOutButton)
         setupConfig()
         applyConstraints()
       
@@ -219,16 +270,34 @@ class ViewController: UIViewController {
         
     }
     
+    func checkCollectionVault() async throws -> Bool {
+        guard let address = fcl.currentUser?.addr else {
+            throw FCLError.unauthenticated
+        }
+
+        do {
+            let result: Bool = try await fcl.query(script: HelperFile.checkInit,
+                                                   args: [.address(address)]).decode()
+            print(result)
+            return result
+        } catch {
+            print(error)
+            throw error
+        }
+    }
+    
     
     @objc func purchaseBtnClicked(){
         Task {
             do {
-                let txId = try await fcl.mutate(cadence: HelperFile.initAccount)
-                print("txId ==> \(txId.hex)")
-                FlowManager.shared.subscribeTransaction(txId: txId.hex)
-                let seconds = 2.0
-                DispatchQueue.main.asyncAfter(deadline: .now() + seconds) { [self] in
-                    initAccountButton.alpha = 0.0
+                if(ViewController.result == false){
+                    let txId = try await fcl.mutate(cadence: HelperFile.initAccount)
+                    print("txId ==> \(txId.hex)")
+                    FlowManager.shared.subscribeTransaction(txId: txId.hex)
+                    let seconds = 2.0
+                    DispatchQueue.main.asyncAfter(deadline: .now() + seconds) { [self] in
+                        initAccountButton.alpha = 0.0
+                    }
                 }
             } catch {
                 print(error)
@@ -250,6 +319,26 @@ class ViewController: UIViewController {
 
         Task{
             do{
+                Task {
+                                    do {
+                                        let answer = try await checkCollectionVault()
+                                        if(answer == false){
+                                            let noCollectionAlert = UIAlertController(title: "OOPS!", message: "Login failed, Please initialize your account by clicking the Purchase NFT Button, and purchase desired NFT to login", preferredStyle: UIAlertController.Style.alert)
+
+                                            noCollectionAlert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (action: UIAlertAction!) in
+                                                  print("Handle Ok logic here")
+                                                self.dismiss(animated: true)
+                                            }))
+
+                                            present(noCollectionAlert, animated: true, completion: nil)
+                                            print("Please Create a Collection")
+                                        }
+                                    } catch {
+                                        print(error)
+                                    }
+                                }
+                
+                
                 let nftList = try await fcl.query(script: HelperFile.nftList,
                                                                                         args: [.address(address)])
                     .decode([NFTModel].self)
@@ -258,7 +347,7 @@ class ViewController: UIViewController {
                 
                 if(nftList.isEmpty){
                     
-                    let failAlert = UIAlertController(title: "OOPS", message: "Login Failed, Please Purchase our NFT", preferredStyle: UIAlertController.Style.alert)
+                    let failAlert = UIAlertController(title: "OOPS", message: "Login Failed - No GrowthBook NFT found, Please purchase our NFT", preferredStyle: UIAlertController.Style.alert)
 
                     failAlert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (action: UIAlertAction!) in
                           print("Handle Ok logic here")
