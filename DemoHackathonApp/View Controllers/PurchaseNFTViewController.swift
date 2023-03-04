@@ -167,24 +167,48 @@ extension PurchaseNFTViewController: UITableViewDelegate, UITableViewDataSource{
        // for idx in idarr {
             //print(idx)
         if(indexPath.row == 0){
-            let nft = nftList[Int(idarr[0])-Int(nftList[0].id)]
-            PurchaseNFTViewController.index = nft.id
-            
-            DispatchQueue.main.async {
-                let vc = DetailNFTPlanViewController()
-                vc.configure(with: NFTModel(ipfsHash: nft.ipfsHash, id: nft.id, metadata: nft.metadata))
-                self.navigationController?.pushViewController(vc, animated: true)
+            for nfts in nftList{
+                if (nfts.id == idarr[0]){
+                    let nft = nfts
+                    PurchaseNFTViewController.index = nft.id
+                    DispatchQueue.main.async {
+                        let vc = DetailNFTPlanViewController()
+                        vc.configure(with: NFTModel(ipfsHash: nft.ipfsHash, id: nft.id, metadata: nft.metadata))
+                        self.navigationController?.pushViewController(vc, animated: true)
+                    }
+                    
+                }
+                //            let nft = nftList[Int(idarr[0])-Int(nftList[0].id)]
+                //            PurchaseNFTViewController.index = nft.id
+                //
+                //            DispatchQueue.main.async {
+                //                let vc = DetailNFTPlanViewController()
+                //                vc.configure(with: NFTModel(ipfsHash: nft.ipfsHash, id: nft.id, metadata: nft.metadata))
+                //                self.navigationController?.pushViewController(vc, animated: true)
+                //            }
             }
         }
         else if(indexPath.row == 1){
-            let nft = nftList[Int(idarr[1])-Int(nftList[0].id)]
-            PurchaseNFTViewController.index = nft.id
-            
-            DispatchQueue.main.async {
-                let vc = DetailNFTPlanViewController()
-                vc.configure(with: NFTModel(ipfsHash: nft.ipfsHash, id: nft.id, metadata: nft.metadata))
-                self.navigationController?.pushViewController(vc, animated: true)
+            for nfts in nftList{
+                if (nfts.id == idarr[1]){
+                    let nft = nfts
+                    PurchaseNFTViewController.index = nft.id
+                    DispatchQueue.main.async {
+                        let vc = DetailNFTPlanViewController()
+                        vc.configure(with: NFTModel(ipfsHash: nft.ipfsHash, id: nft.id, metadata: nft.metadata))
+                        self.navigationController?.pushViewController(vc, animated: true)
+                    }
+                    
+                }
             }
+//            let nft = nftList[Int(idarr[1])-Int(nftList[0].id)]
+//            PurchaseNFTViewController.index = nft.id
+//
+//            DispatchQueue.main.async {
+//                let vc = DetailNFTPlanViewController()
+//                vc.configure(with: NFTModel(ipfsHash: nft.ipfsHash, id: nft.id, metadata: nft.metadata))
+//                self.navigationController?.pushViewController(vc, animated: true)
+//            }
         }
     }
     
