@@ -228,9 +228,9 @@ class ViewController: UIViewController {
         ]
         
         let logOutButtonConstraints = [
-            logOutButton.topAnchor.constraint(equalTo: view.topAnchor, constant: 60),
+            logOutButton.topAnchor.constraint(equalTo: view.topAnchor, constant: Constants.screenSize.height/10),
             logOutButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
-            logOutButton.widthAnchor.constraint(equalToConstant: 60)
+            logOutButton.widthAnchor.constraint(equalToConstant: 70)
         ]
         
         NSLayoutConstraint.activate(verifyNFTButtonConstraints)
