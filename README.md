@@ -1,6 +1,6 @@
 # Team-Reblock-Submission-GrowthBookNFT
 
-# (Kindly Use iphone-8 Simulator to test the prototype, We are working to adjust the perfect layout for other iOS devices too)
+# (Kindly Use iphone-8 Simulator for best experience, We are working to adjust the perfect layout for other iOS devices too)
 
 Track, Consult, Connect: The All-in-One Parenting Solution with Growthbook NFT - Get access to premium features with buying our cool NFT Packs
 
