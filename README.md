@@ -27,3 +27,9 @@ b) Connect the app with your Blocto Account
 c) You can login with the login button, if already bought our NFT
 
 d) Or you can purchase our NFT from the purchase tab, and enjoy our app's premium features.
+
+
+https://github.com/AarishKhanna/Team-Reblock-Submission-GrowthBookNFT/assets/68593746/a6739c7d-cf64-4908-99b1-e02340b4375b
+
+
+
